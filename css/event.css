@@ -1,0 +1,33 @@
+#content {
+   margin: 0 auto;
+}
+
+.game-card {
+   cursor: pointer;
+   padding: 10px;
+   font-size: 12px;
+}
+
+.info-header {
+   padding-left: 95px;
+   font-weight: 500;
+   font-style: italic;
+}
+
+.player-axis {
+   margin-top: 5px;
+}
+
+.player-div {
+   padding-right: 10px;
+   height: 45px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   /* font-style: italic; */
+}
+
+.bar {
+   opacity: 1;
+}

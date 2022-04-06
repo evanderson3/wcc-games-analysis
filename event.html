@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>Chess Games</title>
+   <meta name="description" content="An archive of chess world championship matches.">
+   <meta name="author" content="Evan Anderson">
+
+   <meta property="og:title" content="Chess Games">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="tbd">
+   <meta property="og:description" content="An archive of chess games, events, and players.">
+
+   <!-- Importing fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/nav.css">
+   <link rel="stylesheet" href="css/event.css">
+
+</head>
+
+<body>
+
+   <div class="container-col" id="wrapper">
+
+      <!-- navbar -->
+      <div class="container-row" id="nav-wrapper">
+         <div class="container-row" id="navbar">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Events</div>
+            <div class="nav-item">Players</div>
+         </div>
+      </div>
+
+      <!-- content -->
+      <div class="container-col" id="content"></div>
+      <div id="eval-graph-panel"></div>
+   </div>
+
+   <!-- Scripts and packages -->
+   <script type="module" src="js/event.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+</body>
+</html>

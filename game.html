@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>Chess Games</title>
+   <meta name="description" content="An archive of chess games, events, and players.">
+   <meta name="author" content="Evan Anderson">
+
+   <meta property="og:title" content="Chess Games">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="tbd">
+   <meta property="og:description" content="An archive of chess games, events, and players.">
+
+   <!-- Importing chessboard.js css -->
+   <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css" integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+
+   <!-- Importing fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/nav.css">
+   <link rel="stylesheet" href="css/game/game.css">
+   <link rel="stylesheet" href="css/game/gameBoard.css">
+   <link rel="stylesheet" href="css/game/gameInfo.css">
+   <link rel="stylesheet" href="css/game/gameMoves.css">
+   <link rel="stylesheet" href="css/game/gameButtons.css">
+
+</head>
+
+<body>
+
+   <div class="container-col" id="wrapper">
+
+      <!-- navbar -->
+      <div class="container-row" id="nav-wrapper">
+         <div class="container-row" id="navbar">
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Events</div>
+            <div class="nav-item">Players</div>
+         </div>
+      </div>
+
+      <!-- content -->
+      <div class="container-row" id="content">
+
+         <!-- the board wrapper -->
+         <div class="container-col" id="board-wrapper">
+            <div class="container-row player-div" id="top-player">
+               <span class="dot" id="top-dot"></span>
+               <div class="player-name" id="top-player-name">Top Player</div>
+            </div>
+            <div id="chess-board"></div>
+            <div class="container-row player-div" id="bottom-player">
+               <span class="dot" id="bottom-dot"></span>
+               <div class="player-name" id="bottom-player-name">Bottom Player</div>
+            </div>
+         </div>
+
+         <!-- the game panel -->
+         <div class="container-col" id="game-panel-wrapper">
+
+            <!-- info wrapper -->
+            <div class="container-col" id="game-info-wrapper">
+               <div id="event-name-info">Event</div>
+               <div class="container-row" id="round-date-info">
+                  <div id="round-info">Round</div>
+                  <div id="dot-split">•</div>
+                  <div id="date-info">Date Month, Year</div>
+               </div>
+               <div class="container-row player-info-div" id="white-player-info">
+                  <span class="info-dot" id="white-dot"></span>
+                  <div id="white-name-info">Player Name</div>
+               </div>
+               <div class="container-row player-info-div" id="black-player-info">
+                  <span class="info-dot" id="black-dot"></span>
+                  <div id="black-name-info">Player Name</div>
+               </div>
+            </div>
+
+            <!-- moves grid -->
+            <div id="moves-grid"></div>
+
+            <!-- button box -->
+            <div class="container-col" id="button-box">
+               <div class="container-row" id="checkbox-wrapper">
+                  <div class="checkbox-div">
+                     <input type="checkbox" id="eval-checkbox" name="eval-checkbox" value="Off">
+                     <label class="checkbox-label" for="eval-checkbox">Show Eval.</label>
+                  </div>
+                  <div class="checkbox-div">
+                     <input type="checkbox" id="flip-board-checkbox" name="flip-board-checkbox" value="Off">
+                     <label class="checkbox-label" for="flip-board-checkbox">Flip Board</label>
+                  </div>
+               </div>
+               <div class="container-row" id="navigators">
+                  <button class="move-nav-button" id="start-button"><<</button>
+                  <button class="move-nav-button" id="prev-button"><</button>
+                  <button class="move-nav-button" id="next-button">></button>
+                  <button class="move-nav-button" id="end-button">>></button>
+               </div>
+            </div>
+         </div>         
+      </div>
+      <div id="eval-graph-panel"></div>
+   </div>
+
+   <!-- Scripts and packages -->
+   <script type="module" src="js/game.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+   <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js" integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+</body>
+</html>

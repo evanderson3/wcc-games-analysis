@@ -1,0 +1,55 @@
+/* wrapper of button panel */
+#button-box {
+   margin-top: 5px;
+   justify-self: flex-end;
+}
+
+/* wrapper of checkboxes */
+#checkbox-wrapper {
+   justify-content: center;
+   align-items: center;
+   padding: 5px;
+}
+
+/* labels of checkboxes */
+.checkbox-label {
+   font-size: 14px;
+}
+
+#eval-checkbox:hover, #flip-board-checkbox:hover, .checkbox-label:hover {
+   cursor: pointer;
+}
+
+
+.checkbox-div:hover {
+   cursor: pointer;
+}
+
+/* the engine toggler */
+#engine-checkbox {
+   height: 12px;
+}
+
+/* the flip board toggler */
+#flip-board-checkbox {
+   margin-left: 20px;
+}
+
+/* the wrapper for all game navigation buttons */
+#navigators {
+   max-width: 300px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* styling of game navigation buttons */
+.move-nav-button {
+   height: 40px;
+   font-size: 14px;
+   font-weight: bold;
+
+   margin: 2px;
+
+   background-color: white;
+   color: black;
+}

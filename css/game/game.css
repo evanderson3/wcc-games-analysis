@@ -1,0 +1,15 @@
+/* dark blue: #001d3d */
+/* blue: #003566 */
+/* light-blue: #e0fbfc */
+/* gold: #ffc300 */
+/* yellow: #ffd60a */
+
+#content {
+   height: 100%;
+   max-width: 100%;
+
+   margin-top: 20px;
+
+   align-items: center;
+   justify-content: center;
+}

@@ -1,0 +1,124 @@
+/* dark blue: #001d3d */
+/* blue: #003566 */
+/* light-blue: #e0fbfc */
+/* gold: #ffc300 */
+/* yellow: #ffd60a */
+
+/* the whole table */
+#games-table {
+   width: 900px;
+   max-height: 60vh;
+   margin-bottom: 50px;
+   margin-left: 10px;
+
+   overflow: scroll;
+
+   display: grid;
+   grid-template-columns: auto;
+
+   box-shadow: 3px 3px 3px black;
+}
+
+#games-table::-webkit-scrollbar {
+   width: 6px;
+   height: 0px;
+   background-color: gray;
+}
+
+#games-table::-webkit-scrollbar-thumb {
+   background-color: #e0fbfc;
+}
+
+#games-table::-webkit-scrollbar-corner {
+   background-color: #001d3d;
+} 
+
+/* styling for table headers */
+#header-row {
+   width: 900px;
+   margin-top: 50px;
+   padding-left: 10px;
+   padding-bottom: 3px;
+
+   display: grid;
+   grid-template-columns: 200px 100px 200px 100px 200px 80px;
+}
+
+.table-header {
+   color: #e0fbfc;
+   padding: 1px 2px;
+
+   font-weight: bold;
+   font-style: italic;
+   text-decoration: underline #ffc300;
+}
+
+/* styling for table rows */
+/* styling for all elements in table */
+.table-element {
+   font-size: 12px;
+   padding: 2px 5px;
+   
+}
+
+.table-row {
+   width: 100%;
+   display: grid;
+   grid-template-columns: 200px 100px 200px 100px 200px 80px;
+   align-items: center;
+}
+
+.light-row {
+   background-color: #003566;
+   color: #e0fbfc;
+}
+
+.dark-row {
+   background-color: #001d3d;
+   color: #e0fbfc;
+}
+
+/* nicely arranging text for players around the result */
+.white-div {
+   text-align: right;
+}
+
+.result-div {
+   text-align: center;
+}
+
+.black-div {
+   text-align: left;
+}
+
+/* adding link to indicators to players and events in table */
+.white-div:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.black-div:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+/* adding link indicators to events */
+.event-div:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+
+.board-div {
+   padding: 2px 0px;
+}
+
+.board-div:hover {
+   cursor: pointer;
+}
+
+.mini-board-icon {
+   width: 25px;
+   align-self: center;
+   padding-top: 3px;
+}

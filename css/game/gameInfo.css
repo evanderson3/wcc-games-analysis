@@ -1,0 +1,65 @@
+
+/* the wrapper of the entire game panel */
+#game-panel-wrapper {
+   height: 595px;
+   min-width: 300px;
+   background-color: white;
+   border: solid black 2px;
+   color: black;
+
+   margin-left: 20px;
+   box-shadow: 2px 2px 2px gray;
+}
+
+/* the wrapper for the upper game-info div */
+#game-info-wrapper {
+   margin: 20px auto;
+   font-size: 14px;
+}
+
+/* the event name */
+#event-name-info {
+   font-weight: bold;
+   font-size: 16px;
+}
+
+/* the game date */
+#date-info {
+   margin-bottom: 10px;
+}
+
+/* the player's info div, incl. name and dot */
+.player-info-div {
+   align-items: center;
+}
+
+.player-info-div:hover {
+   text-decoration: underline black;
+   cursor: pointer;
+}
+
+/* game panel colored dots */
+.info-dot {
+   margin-right: 5px;
+
+   height: 12px;
+   width: 12px;
+   border: 1px solid black;
+   border-radius: 50%;
+}
+
+#white-name-info, #black-name-info {
+   margin-right: 4px;
+}
+
+#black-dot {
+   background-color: black;
+}
+
+#white-dot {
+   background-color: white;
+}
+
+#dot-split {
+   padding: 0px 5px;
+}

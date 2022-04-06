@@ -1,0 +1,51 @@
+/* dark blue: #001d3d */
+/* blue: #003566 */
+/* light-blue: #e0fbfc */
+/* gold: #ffc300 */
+/* yellow: #ffd60a */
+
+
+#nav-wrapper {
+   background-color: white;
+   width: 100%;
+
+   justify-content: center;
+}
+
+/* the nav bar */
+#navbar {
+   background-color: white;
+   width: 950px;
+
+   align-items: center;
+   margin: 0 auto;
+}
+
+/* the nav items */
+.nav-item {
+   font-size: 18px;
+   text-align: center;
+   font-weight: 500;
+   color: black;
+
+   padding: 15px;
+}
+
+.nav-item:hover {
+   text-decoration: underline #4D96FF 2px;
+   cursor: pointer;
+}
+
+/* the nav logo */
+#nav-logo {
+   width: 40px;
+   height: 40px;
+   align-self: center;
+
+   margin-right: 20px;
+}
+
+#nav-logo {
+   cursor: pointer;
+}
+

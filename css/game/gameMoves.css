@@ -1,0 +1,81 @@
+
+/* the grid of moves */
+#moves-grid {
+   display: grid;
+   grid-template-columns: 2fr 3fr 3fr;
+
+   max-height: 400px;
+   overflow: scroll;
+}
+
+#moves-grid::-webkit-scrollbar {
+   width: 6px;
+   height: 0px;
+   background-color: white;
+}
+
+#moves-grid::-webkit-scrollbar-thumb {
+   background-color: gray;
+}
+
+#moves-grid::-webkit-scrollbar-corner {
+   background-color: black;
+} 
+
+/* standard styling of all table elements */
+.table-element {
+   font-size: 14px;
+   padding: 2px;
+}
+
+/* the move numbers */
+.move-num-div {
+   font-style: italic;
+   text-align: center;
+   color: black;
+}
+
+/* the move div */
+.move-div {
+   font-weight: bold;
+}
+
+/* the eval div */
+.eval-div {
+   color: gray;
+   margin-left: 15px;
+   font-size: 11px;
+
+   display: none;
+}
+
+/* the pair of move and eval divs */
+.move-eval-pair {
+   align-items: center;
+   border: solid 1px transparent;
+}
+
+/* hover effect for move/eval pair */
+.move-eval-pair:hover {
+   border: solid 1px black;
+   cursor: pointer;
+}
+
+/* the result div at very end of table */
+.result-div {
+   background-color: black;
+   color: white;
+   font-weight: bold;
+
+   text-align: center;
+}
+
+/* styling for light rows */
+.light-row {
+   background-color: white;
+}
+
+/* styling for dark rows */
+.dark-row {
+   background-color: lightgray;
+}

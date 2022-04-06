@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>Chess Games</title>
+   <meta name="description" content="An archive of chess games, events, and players.">
+   <meta name="author" content="Evan Anderson">
+
+   <meta property="og:title" content="Chess Games">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="tbd">
+   <meta property="og:description" content="An archive of chess games, events, and players.">
+
+   <!-- jQuery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+   <!-- Importing fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/nav.css">
+   <link rel="stylesheet" href="css/player/player.css">
+   <link rel="stylesheet" href="css/player/table.css">
+
+</head>
+
+<body>
+
+   <div class="container-col" id="wrapper">
+
+      <!-- Navbar -->
+      <div class="container-row" id="nav-wrapper">
+         <div class="container-row" id="navbar">
+            <img id="nav-logo" src='img/crown.png' />
+            <div class="nav-item">Home</div>
+            <div class="nav-item">Events</div>
+            <div class="nav-item">Players</div>
+         </div>
+      </div>
+
+
+      <!-- Content -->
+      <div class="container-col" id="content">
+         <div class="container-col" id="info-wrapper">
+            <div class="content-item player-name" id="player-name">Player Name</div>
+            <div class="player-info">
+               <div class="content-item player-country">Country</div>
+               <div class="content-item player-birthday">Month Day, Year (age --)</div>
+            </div>
+         </div>
+         <div class="table-row" id="header-row">
+            <div class="table-header event-div table-element">Event</div>
+            <div class="table-header date-div table-element">Date</div>
+            <div class="table-header color-div white-div table-element">White</div>
+            <div class="table-header result-div table-element">Result</div>
+            <div class="table-header color-div black-div table-element">Black</div>
+            <div class="table-header board-div table-element"></div>
+         </div>
+         <div class="games-table" id="games-table"></div>
+      </div>
+   </div>
+
+   <!-- your content here... -->
+   <script type="module" src="js/player.js"></script>
+</body>
+</html>

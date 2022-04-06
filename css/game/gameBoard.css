@@ -1,0 +1,50 @@
+
+/* the actual chess board */
+#chess-board {
+   width: 600px;
+   border: 1px color transparent;
+}
+
+#chess-board:hover {
+   cursor: pointer;
+}
+
+/* the player div, containing color dot and player name */
+.player-div {
+   padding: 5px 0px;
+   font-size: 20px;
+   font-weight: 500;
+
+   align-items: center;
+}
+
+.player-div:hover {
+   text-decoration: underline black 2px;
+   cursor: pointer;
+}
+
+/* the player's name */
+.player-name {
+   color: black;
+   padding-right: 10px;
+}
+
+/* the dot to appear to left of players name */
+.dot {
+   margin-right: 10px;
+
+   height: 16px;
+   width: 16px;
+   border: 2px solid black;
+   border-radius: 50%;
+}
+
+/* initial coloring of top dot */
+#top-dot {
+   background-color: black;
+}
+
+/* initial coloring of bottom dot */
+#bottom-dot {
+   background-color: white;
+}

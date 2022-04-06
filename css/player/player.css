@@ -1,0 +1,46 @@
+/* dark blue: #001d3d */
+/* blue: #003566 */
+/* light-blue: #e0fbfc */
+/* gold: #ffc300 */
+/* yellow: #ffd60a */
+
+
+
+/* the content div */
+#content {
+   background-color: #001d3d;
+   height: 100%;
+   max-width: 100%;
+
+   align-items: center;
+   justify-content: center;
+}
+
+/* a content item */
+.content-item {
+   color: #e0fbfc;
+}
+
+/* the name of the player */
+.player-name {
+   color: #ffd60a;
+   font-size: 64px;
+   font-weight: 900;
+   padding: 40px 0px 10px 10px;
+
+   /* text-decoration: solid underline #ffd60a 4px; */
+}
+
+/* the player information */
+.player-info {
+   font-size: 18px;
+   padding-left: 10px;
+   font-style: italic;
+
+   font-weight: 400;
+}
+
+#info-wrapper {
+   width: 900px;
+}
+
