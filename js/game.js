@@ -31,7 +31,7 @@ async function main() {
       let gameObj = getGameObj(game)
 
       updatePlayers(gameObj)
-      updateGameInfo(gameObj)
+      updateGameInfo(gameObj, gameId)
       updateMovesTable(gameObj)
       
       // drawing the eval graph, hiding until eval toggled on

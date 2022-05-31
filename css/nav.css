@@ -23,6 +23,7 @@
 
 /* the nav items */
 .nav-item {
+   text-decoration: none;
    font-size: 18px;
    text-align: center;
    font-weight: 500;

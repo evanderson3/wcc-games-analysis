@@ -33,11 +33,6 @@
    align-items: center;
 }
 
-.player-info-div:hover {
-   text-decoration: underline black;
-   cursor: pointer;
-}
-
 /* game panel colored dots */
 .info-dot {
    margin-right: 5px;
@@ -62,4 +57,9 @@
 
 #dot-split {
    padding: 0px 5px;
+}
+
+#event-name-info:hover {
+   cursor: pointer;
+   text-decoration: underline;
 }

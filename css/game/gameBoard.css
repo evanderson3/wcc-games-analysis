@@ -18,11 +18,6 @@
    align-items: center;
 }
 
-.player-div:hover {
-   text-decoration: underline black 2px;
-   cursor: pointer;
-}
-
 /* the player's name */
 .player-name {
    color: black;

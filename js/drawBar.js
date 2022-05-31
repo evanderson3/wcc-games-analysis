@@ -13,7 +13,7 @@ export async function drawBar(game, targetID) {
    }
 
    // specifying plot dimensions 
-   let width = 350 - margin.left - margin.right
+   let width = 550 - margin.left - margin.right
    let height = 120 - margin.top - margin.bottom
 
    let svg = d3.select("#" + targetID)
@@ -22,14 +22,6 @@ export async function drawBar(game, targetID) {
          .attr('height', height + margin.top + margin.bottom)
       .append('g')
          .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-   
-   // // adding a border around our plot
-   // svg.append('rect')
-   //    .attr('x', 0)
-   //    .attr('width', width)
-   //    .attr('y', 0)
-   //    .attr('height', height)
-   //    .style('outline', '1px solid black')
    
    // adding our white rectangle
    svg.append('rect')

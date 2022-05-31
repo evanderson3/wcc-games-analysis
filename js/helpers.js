@@ -49,12 +49,19 @@ export const getEventObj = (eventJSON) => {
 
 
 // update game info in UI
-export const updateGameInfo = (game) => {
+export const updateGameInfo = (game, gameId) => {
 
    let gameDate = new Date(game[0]['date'])
    let gameYear = gameDate.getFullYear()
 
+   let idSplit = gameId.split('_')
+   let eventId = idSplit[0] + '_' + idSplit[1] + '_' + idSplit[2]
+
    $('#event-name-info').html(gameYear + " World Championship Match")
+   $('#event-name-info').click(() => {
+      location.href = 'event.html?eventID='.concat(eventId)
+   })
+
    $('#round-info').html('Round ' + game[0]['round'])
    $('#date-info').html(getCleanDate(game[0]['date']))
    $('#white-name-info').html(game[0]['white'])
@@ -85,8 +92,6 @@ export const getEvalList = (game) => {
 
 // update the table of moves in UI
 export const updateMovesTable = (game) => {
-
-   console.log(game)
    
    // extracting list of moves
    const moves = getMovesList(game)
@@ -277,4 +282,46 @@ export const makeGameCard = (eventGameObj, gameObj, gameNum) => {
    })
 
   
+}
+
+export const makeEventTable = (eventsObj) => {
+   for (let event in eventsObj) {
+
+      let rowStyle = ''
+      if (event%2 == 0) {
+         rowStyle = 'dark-row' 
+      } else {
+         rowStyle = 'light-row'
+      }
+
+      let year = eventsObj[event]['year']
+      let champion = eventsObj[event]['champion']
+      let challenger = eventsObj[event]['challenger']
+
+      let yearDiv = $('<div></div>').addClass('event-table-div year-div')
+      yearDiv.addClass(rowStyle)
+      yearDiv.click(() => {
+         location.href = 'event.html?eventID='.concat(year + '_' + champion + '_' + challenger)
+      })
+      yearDiv.text(year)
+
+      let championDiv = $('<div></div>').addClass('event-table-div champion-div')
+      championDiv.addClass(rowStyle)
+      championDiv.click(() => {
+         location.href = 'event.html?eventID='.concat(year + '_' + champion + '_' + challenger)
+      })
+      championDiv.text(champion)
+
+      let challengerDiv = $('<div></div>').addClass('event-table-div challenger-div')
+      challengerDiv.addClass(rowStyle)
+      challengerDiv.click(() => {
+         location.href = 'event.html?eventID='.concat(year + '_' + champion + '_' + challenger)
+      })
+      challengerDiv.text(challenger)
+
+      $("#events-grid").append(yearDiv)
+      $("#events-grid").append(championDiv)
+      $("#events-grid").append(challengerDiv)
+   }
+
 }

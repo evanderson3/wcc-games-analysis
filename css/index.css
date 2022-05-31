@@ -1,0 +1,37 @@
+#content {
+   display: flex;
+   align-self: center;
+}
+
+.event-table-div {
+   padding: 5px;
+}
+
+.event-table-header {
+   font-weight: bold;
+}
+
+#events-grid {
+   display: grid;
+   grid-template-columns: 2fr 3fr 3fr;
+
+   max-width: 500px;
+}
+
+/* styling for light rows */
+.light-row {
+   background-color: white;
+}
+
+.light-row:hover {
+   cursor: pointer;
+}
+
+/* styling for dark rows */
+.dark-row {
+   background-color: lightgray;
+}
+
+.dark-row:hover {
+   cursor: pointer;
+}
