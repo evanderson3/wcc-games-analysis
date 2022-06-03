@@ -17,7 +17,7 @@
    <!-- Importing fonts -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
    <!-- Custom CSS -->
    <link rel="stylesheet" href="css/style.css">
@@ -38,8 +38,18 @@
       </div>
 
       <!-- content -->
-      <div class="container-col" id="content"></div>
-      <div id="eval-graph-panel"></div>
+      <div class="container-col" id="content">
+         <h1 id="event-header">Champion vs. Challenger (Year)</h1>
+         <div id="games-table">
+            <div class="table-header table-element">Round</div>
+            <div class="table-header table-element">Colors</div>
+            <div class="table-header table-element">Evaluation</div>
+            <div class="table-header table-element">Result</div>
+            <div class="table-header table-element"># Moves</div>
+            <div class="table-header table-element" id="opening-header">Opening</div>
+         </div>
+      </div>
+      <!-- <div id="eval-graph-panel"></div> -->
    </div>
 
    <!-- Scripts and packages -->
