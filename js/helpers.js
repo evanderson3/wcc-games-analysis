@@ -1,4 +1,5 @@
 import { drawBar } from "./drawBar.js"
+import { drawMiniBar } from "./drawMiniBar.js"
 
 // cleans up the date for presentation
 const getCleanDate = (date) => {
@@ -324,4 +325,126 @@ export const makeEventTable = (eventsObj) => {
       $("#events-grid").append(challengerDiv)
    }
 
+}
+
+export const updateEventHeader = (eventID) => {
+   let eventIdSplit = eventID.split('_')
+   let eventString = eventIdSplit[1] + ' vs ' + eventIdSplit[2] + ', ' + eventIdSplit[0]
+
+   $("#event-header").text(eventString)
+}
+
+// brief function for abbreviating the opening
+const abbrevOpening = (longOpeningName) => {
+   return longOpeningName.split(',')[0]
+}
+
+// splits the result for 
+const splitResult = (result) => {
+   let resultStringSplit = result.split('-')
+   let whiteResult = resultStringSplit[0]
+   let blackResult = resultStringSplit[1]
+
+   if (whiteResult == '1/2') {
+      whiteResult = "\u00BD"
+      blackResult = "\u00BD"
+   }
+
+   return [whiteResult, blackResult]
+}
+
+// builds an individual row for the games table
+export const makeGameRow = (eventGameObj, gameObj, gameNum) => {
+
+   $(document).ready(() => {
+
+      let gameID = eventGameObj['game_id']
+      let round = eventGameObj['round']
+      let white = eventGameObj['white']
+      let black = eventGameObj['black']
+      let result = eventGameObj['result']
+
+      let whiteStyle = ''
+      let blackStyle = ''
+      if (result !== '1/2-1/2') {
+         if (result == '1-0') {
+            whiteStyle = 'victory'
+         } else {
+            blackStyle = 'victory'
+         }
+      }
+
+      // adding the round div
+      let roundDiv = $('<div></div>').addClass('round-div table-element').attr('id', 'round-div-'.concat(gameNum))
+      roundDiv.text(round)
+
+      // building the players div
+      let playersDiv = $('<div></div>').addClass('players-div table-element').attr('id', 'players-div-'.concat(gameNum))
+      playersDiv.click(() => {
+         location.href = 'game.html?gameID='.concat(gameID)
+      })
+
+      let whiteDiv = $('<div></div>').addClass('white-div').attr('id', 'white-div-'.concat(gameNum))
+      let blackDiv = $('<div></div>').addClass('black-div').attr('id', 'black-div-'.concat(gameNum))
+      
+      let whiteDot = $("<span></span>").addClass('dot').attr('id', 'white-dot')
+      let blackDot = $("<span></span>").addClass('dot').attr('id', 'black-dot')
+      
+      let whiteNameDiv = $("<div></div>").addClass('white-name-div').attr('id', 'white-name-div-'.concat(gameNum))
+      let blackNameDiv = $("<div></div>").addClass('black-name-div').attr('id', 'white-name-div-'.concat(gameNum))
+
+      whiteDiv.append(whiteDot, whiteNameDiv)
+      blackDiv.append(blackDot, blackNameDiv)
+
+      whiteNameDiv.text(abbrevName(white))
+      blackNameDiv.text(abbrevName(black))
+
+      whiteNameDiv.addClass(whiteStyle)
+      blackNameDiv.addClass(blackStyle)
+
+      playersDiv.append(whiteDiv, blackDiv)
+
+      // building the eval div
+      let evalDivID = 'eval-div-'.concat(gameNum)
+      let evalDiv = $('<div></div>').addClass('eval-div table-element').attr('id', evalDivID)
+      evalDiv.click(() => {
+         location.href = 'game.html?gameID='.concat(gameID)
+      })
+
+      // building the result div
+      let resultDiv = $('<div></div>').addClass('result-div table-element').attr('id', 'result-div-'.concat(gameNum))
+      resultDiv.click(() => {
+         location.href = 'game.html?gameID='.concat(gameID)
+      })
+      let whiteResultDiv = $('<div></div>').addClass('white-result-div').attr('id', 'white-result-div-'.concat(gameNum))
+      let blackResultDiv = $('<div></div>').addClass('black-result-div').attr('id', 'black-result-div-'.concat(gameNum))
+
+      let resultSplit = splitResult(result)
+      whiteResultDiv.text(resultSplit[0])
+      blackResultDiv.text(resultSplit[1])
+
+      whiteResultDiv.addClass(whiteStyle)
+      blackResultDiv.addClass(blackStyle)
+
+      resultDiv.append(whiteResultDiv, blackResultDiv)
+
+      // building the numMoves div
+      let numMoves = Math.ceil(gameObj.length / 2)
+      let numMovesDiv = $('<div></div>').addClass('num-moves-div table-element').attr('id', 'num-moves-div-'.concat(gameNum))
+      numMovesDiv.text(numMoves)
+      numMovesDiv.click(() => {
+         location.href = 'game.html?gameID='.concat(gameID)
+      })
+
+      // building the opening div
+      let openingDiv = $('<div></div>').addClass('opening-div table-element').attr('id', 'opening-div-'.concat(gameNum))
+      openingDiv.click(() => {
+         location.href = 'game.html?gameID='.concat(gameID)
+      })
+      
+      openingDiv.text(abbrevOpening(eventGameObj['opening_name']))
+
+      $("#games-table").append(roundDiv, playersDiv, evalDiv, resultDiv, numMovesDiv, openingDiv)
+      drawMiniBar(gameObj, evalDivID)
+   })
 }

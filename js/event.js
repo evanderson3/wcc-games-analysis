@@ -1,4 +1,4 @@
-import { makeGameCard } from "./helpers.js"
+import { makeGameCard, updateEventHeader, makeGameRow } from "./helpers.js"
 
 async function main() {
 
@@ -17,7 +17,8 @@ async function main() {
 
    async function loadEventPage() {
       let event = await eventJSON
-      
+
+      updateEventHeader(eventID)
       // iterating through games in event
       for (let game in event) {
          let gameID = event[game]['game_id']
@@ -27,10 +28,9 @@ async function main() {
             .then((res) => res.json())
             .then((res) => { return res })
 
-
          let gameObj = await gameJSON
 
-         makeGameCard(event[game], gameObj, game)
+         makeGameRow(event[game], gameObj, game)
       }
 
    }
