@@ -294,10 +294,13 @@ export const makeEventTable = (eventsObj) => {
       } else {
          rowStyle = 'light-row'
       }
+      console.log(eventsObj[event]['match_location'])
 
       let year = eventsObj[event]['year']
+      let site = eventsObj[event]['match_location']
       let champion = eventsObj[event]['champion']
       let challenger = eventsObj[event]['challenger']
+      let matchScore = eventsObj[event]['match_score']
 
       let yearDiv = $('<div></div>').addClass('event-table-div year-div')
       yearDiv.addClass(rowStyle)
@@ -305,6 +308,13 @@ export const makeEventTable = (eventsObj) => {
          location.href = 'event.html?eventID='.concat(year + '_' + champion + '_' + challenger)
       })
       yearDiv.text(year)
+
+      let siteDiv = $('<div></div>').addClass('event-table-div site-div')
+      siteDiv.addClass(rowStyle)
+      siteDiv.click(() => {
+         location.href = 'event.html?eventID='.concat(year + '_' + champion + '_' + challenger)
+      })
+      siteDiv.text(site)
 
       let championDiv = $('<div></div>').addClass('event-table-div champion-div')
       championDiv.addClass(rowStyle)
@@ -320,9 +330,18 @@ export const makeEventTable = (eventsObj) => {
       })
       challengerDiv.text(challenger)
 
+      let matchScoreDiv = $('<div></div>').addClass('event-table-div match-score-div')
+      matchScoreDiv.addClass(rowStyle)
+      matchScoreDiv.click(() => {
+         location.href = 'event.html?eventID='.concat(year + '_' + champion + '_' + challenger)
+      })
+      matchScoreDiv.text(matchScore)
+
       $("#events-grid").append(yearDiv)
+      $("#events-grid").append(siteDiv)
       $("#events-grid").append(championDiv)
       $("#events-grid").append(challengerDiv)
+      $("#events-grid").append(matchScoreDiv)
    }
 
 }
@@ -357,6 +376,8 @@ const splitResult = (result) => {
 export const makeGameRow = (eventGameObj, gameObj, gameNum) => {
 
    $(document).ready(() => {
+
+      let matchScore = eventGameObj['match_score']
 
       let gameID = eventGameObj['game_id']
       let round = eventGameObj['round']
@@ -428,6 +449,13 @@ export const makeGameRow = (eventGameObj, gameObj, gameNum) => {
 
       resultDiv.append(whiteResultDiv, blackResultDiv)
 
+      // building the match score div
+      let matchScoreDiv = $('<div></div>').addClass('match-score-div table-element').attr('id', 'match-score-div-'.concat(gameNum))
+      matchScoreDiv.click(() => {
+         location.href = 'game.html?gameID='.concat(gameID)
+      })
+      matchScoreDiv.text(matchScore)
+
       // building the numMoves div
       let numMoves = Math.ceil(gameObj.length / 2)
       let numMovesDiv = $('<div></div>').addClass('num-moves-div table-element').attr('id', 'num-moves-div-'.concat(gameNum))
@@ -444,7 +472,7 @@ export const makeGameRow = (eventGameObj, gameObj, gameNum) => {
       
       openingDiv.text(abbrevOpening(eventGameObj['opening_name']))
 
-      $("#games-table").append(roundDiv, playersDiv, evalDiv, resultDiv, numMovesDiv, openingDiv)
+      $("#games-table").append(roundDiv, playersDiv, evalDiv, resultDiv, matchScoreDiv, numMovesDiv, openingDiv)
       drawMiniBar(gameObj, evalDivID)
    })
 }

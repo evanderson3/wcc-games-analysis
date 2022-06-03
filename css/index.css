@@ -13,9 +13,7 @@
 
 #events-grid {
    display: grid;
-   grid-template-columns: 2fr 3fr 3fr;
-
-   max-width: 500px;
+   grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
 }
 
 /* styling for light rows */
@@ -34,4 +32,9 @@
 
 .dark-row:hover {
    cursor: pointer;
+}
+
+.year-div {
+   font-weight: bold;
+   padding-right: 10px;
 }

@@ -1,6 +1,19 @@
 
 import * as d3 from 'https://cdn.skypack.dev/d3@7';
 
+// putting a cap on the bar heights
+const valCap = (val) => {
+   if (val > 0) {
+      return Math.min(4, val)
+   }
+
+   if (val < 0) {
+      return Math.max(-4, val)
+   }
+
+   return val
+}
+
 // drawing a bar chart of the game's position evals
 export async function drawBar(game, targetID) {
 
@@ -100,9 +113,9 @@ export async function drawBar(game, targetID) {
          .data(game)
       .enter().append('rect')
          .attr('class', 'bar')
-         .attr('y', function(d, i) { return yScale(Math.max(0, d.evaluation)) })
+         .attr('y', function(d, i) { return yScale(Math.max(0, valCap(d.evaluation))) })
          .attr('x', function(d, i) { return xScale(i/2) })
-         .attr('height', function(d, i) { return Math.abs(yScale(d.evaluation) - yScale(0)) })
+         .attr('height', function(d, i) { return Math.abs(yScale(valCap(d.evaluation)) - yScale(0)) })
          .attr('width', xScale.bandwidth())
          .attr('fill', function(d, i) { return d.evaluation > 0 ? '#4D96FF':'#FF6B6B' })
 }

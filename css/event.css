@@ -46,7 +46,7 @@
 
 #games-table {
    display: grid;
-   grid-template-columns: 50px 2fr 350px 1fr 1fr 200px;
+   grid-template-columns: 1fr 1fr 350px 1fr 1fr 1fr 200px;
    row-gap: 20px;
 }
 
@@ -75,6 +75,11 @@
    align-self: center;
    padding-bottom: 3px;
 }
+
+.match-score-div {
+   align-self: center;
+}
+
 
 .round-div {
    font-weight: bold;
@@ -140,4 +145,12 @@
 
 .victory {
    color: #ffb703;
+}
+
+#match-score-header {
+   justify-self: start;
+}
+
+#colors-header {
+   justify-self: start;
 }

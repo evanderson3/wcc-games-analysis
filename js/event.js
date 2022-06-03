@@ -19,6 +19,7 @@ async function main() {
       let event = await eventJSON
 
       updateEventHeader(eventID)
+
       // iterating through games in event
       for (let game in event) {
          let gameID = event[game]['game_id']
