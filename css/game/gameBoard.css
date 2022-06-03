@@ -1,7 +1,7 @@
 
 /* the actual chess board */
 #chess-board {
-   width: 600px;
+   width: 500px;
    border: 1px color transparent;
 }
 

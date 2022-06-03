@@ -8,6 +8,14 @@
    font-size: 12px;
 }
 
+.table-element {
+   padding-left: 10px;
+}
+
+.table-element:hover {
+   cursor: pointer;
+}
+
 .info-header {
    padding-left: 95px;
    font-weight: 500;
@@ -30,4 +38,106 @@
 
 .bar {
    opacity: 1;
+}
+
+#event-header {
+   font-size: 56px;
+}
+
+#games-table {
+   display: grid;
+   grid-template-columns: 50px 2fr 350px 1fr 1fr 200px;
+   row-gap: 20px;
+}
+
+.table-header {
+   /* font-style: italic; */
+
+   text-decoration: underline 1px;
+   font-weight: bold;
+   justify-self: center;
+}
+
+.players-div {
+   display: flex;
+   flex-direction: column;
+
+   justify-self: center;
+   align-self: center;
+   padding-bottom: 3px;
+}
+
+.result-div {
+   display: flex;
+   flex-direction: column;
+
+   justify-self: center;
+   align-self: center;
+   padding-bottom: 3px;
+}
+
+.round-div {
+   font-weight: bold;
+
+   justify-self: center;
+   align-self: center;
+}
+
+.num-moves-div {
+   justify-self: center;
+   align-self: center;
+}
+
+.opening-div {
+   margin-left: 5px;
+   align-self: center;
+}
+
+#opening-header {
+   margin-left: 5px;
+   justify-self: start;
+}
+
+.white-div {
+   align-items: center;
+   display: flex;
+   flex-direction: row;
+   padding-bottom: 3px;
+}
+
+.black-div {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   padding-top: 3px;
+}
+
+.white-result-div {
+   padding-bottom: 3px;
+}
+
+.black-result-div {
+   padding-top: 3px;
+}
+
+/* game panel colored dots */
+.dot {
+   margin-right: 5px;
+
+   height: 12px;
+   width: 12px;
+   border: 1px solid black;
+   border-radius: 50%;
+}
+
+#black-dot {
+   background-color: black;
+}
+
+#white-dot {
+   background-color: white;
+}
+
+.victory {
+   color: #ffb703;
 }
